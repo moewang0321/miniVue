@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{username}}</div>
+        <div>{{age}}</div>
+        <div v-text="sex"></div>
+        <button @click='handle'>点击</button>
+    </div>
+</body>
+<script src="./index.js"></script>
+<script src="./compile.js"></script>
+<script src="./dep.js"></script>
+<script src="./watcher.js"></script>
+<script>
+    var vm = new MyVue({
+        el: '#app',
+        data: {
+            username: 'abc',
+            age: 18,
+            sex: '男'
+        },
+        methods: {
+            handle() {
+                console.log(this)
+            }
+        },
+    })
+
+    console.log(vm)
+</script>
+
+</html>
